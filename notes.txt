@@ -1,0 +1,13 @@
+THE BOOT PROCESS
+
+1. when we rebot our comptuer it must start up again initially without any notioin of an operating system.
+2. it must load the os from some permanent storage device that is currently attached to the computer.
+3. at the boot up, we only have BIOS( Basic Input Output Software),a collection of software routines that
+are initially loaded from a chip into memory and initialised when the computer is switched on.
+4. after the bios completes some low level tests of the hardware ,whether the isntalled memory is working 
+correctly, it must boot the operating system.
+5. since the BIOS cannot read the files or such, it must read from a specific sector of the memory/physical 
+location of the disk devices. the easiest place for BIOS to find the OS is in the first sector
+of one of the disks known as the boot sector.
+6. to idenitfy the boot sector of a block, the last two bytes must be 0x55 and 0xaa, which tells BIOS that 
+this is a boot block.
