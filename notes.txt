@@ -14,3 +14,34 @@ this is a boot block.
 
 
 #Ralf brown's interrupt list
+
+registers available = ax/bx/cx/dx si/di sp/bp
+
+ax -> accumulator register -> ah(8 high order bit) + al (8 low order bit)
+bx -> base register -> bh + bl -> used for addressing
+cx -> count register -> used as a counter -> ch + cl
+dx -> data register -> I/O operations -> DH + DL
+si -> source index -> pointer for string and memory operations -> used with DS
+di -> destination index -> pointer for string and memory operatoins -> used with DS
+sp -> stack pointer -> pointer to the current position in the stack
+bp -> base pointer -> pointer to data within the stack
+
+segment register -> DS, CS, SS, ES
+DS -> data segment -> holds the base address of the data segment
+CS -> code segment -> holds the segment address for the executable code
+SS -> points to the segment containing the program stack
+ES,FS,GS -> additional data segments.
+
+db-> define byte . used to define data atthe byte level.
+dw - define word
+
+[] org stands for origin and is used in assembly language to set the starting adress for the program or the code 
+segment
+[] 0x7C00 - this is the standard memory address where the BIOS loads the boot sector from a bootable device. 
+Since the bootloader expects to be loaded at 0x7C00, all memory offsets within the bootloader code are calculated based on this address. 
+Without org 0x7C00, the relative addresses used in the program would be incorrect, leading to potential execution errors.
+
+[] When you use mov ax, [i] in x86 assembly language, it doesn't transfer the memory address of i into the AX register.
+ Instead, it transfers the value stored at the memory location labeled i into AX.
+
+ 3:04:46
